@@ -1,12 +1,15 @@
 import { Controller, Get } from '@nestjs/common';
 import { InventoryServiceService } from './inventory-service.service';
+import { Products } from './product.entity';
 
-@Controller()
+@Controller('Products')
 export class InventoryServiceController {
-  constructor(private readonly inventoryServiceService: InventoryServiceService) {}
+  constructor(
+    private readonly inventoryServiceService: InventoryServiceService,
+  ) {}
 
   @Get()
-  getHello(): string {
-    return this.inventoryServiceService.getHello();
+  getAll(): Promise<Products[]> {
+    return this.inventoryServiceService.getProdutcs();
   }
 }
