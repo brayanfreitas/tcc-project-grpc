@@ -4,17 +4,17 @@
   "sourceRoot": "apps/order-service/src",
   "compilerOptions": {
     "deleteOutDir": true,
-    "webpack": true,
     "tsConfigPath": "apps/order-service/tsconfig.app.json",
+    "watchAssets": true,
     "assets": ["**/*.proto"],
-    "watchAssets": true
+    "webpack": true
   },
   "monorepo": true,
   "root": "apps/order-service",
   "projects": {
     "order-service": {
       "type": "application",
-      "root": "apps/tcc-project",
+      "root": "apps/order-service",
       "entryFile": "main",
       "sourceRoot": "apps/order-service/src",
       "compilerOptions": {

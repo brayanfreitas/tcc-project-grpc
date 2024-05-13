@@ -1,6 +1,7 @@
 import { join } from 'path';
 import { DataSource } from 'typeorm';
 import { Products } from './product.entity';
+import { Inventory } from './inventory.entity';
 
 export const productsDatabase = new DataSource({
   type: 'postgres',
@@ -9,6 +10,6 @@ export const productsDatabase = new DataSource({
   username: 'postgres',
   password: 'postgres',
   database: 'products',
-  entities: [Products],
+  entities: [Products, Inventory],
   migrations: [join(__dirname, 'migrations', '*{.ts,.js}')],
 });
