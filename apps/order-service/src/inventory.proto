@@ -22,5 +22,5 @@ message UpdateStockRequest {
 }
 
 message UpdateStockResponse {
-  int32 quantity = 1;
+  bool updated = 1;
 }

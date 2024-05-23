@@ -10,6 +10,7 @@ async function bootstrap() {
     OrderModule,
     new FastifyAdapter(),
   );
-  await app.listen(3001);
+  console.log('Order service is running on port 3002')
+  await app.listen(3002);
 }
 bootstrap();

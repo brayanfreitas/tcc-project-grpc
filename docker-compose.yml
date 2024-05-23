@@ -1,0 +1,37 @@
+services:
+  postgres:
+    image: postgres:latest
+    container_name: postgres
+    ports:
+      - '5432:5432'
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=tcc-db
+    networks:
+      - app-network
+
+  inventory-service:
+    build:
+        context: ./inventory-service
+        dockerfile: Dockerfile.inventory
+    container_name: inventory-service
+    ports:
+      - "5000:5000"
+    depends_on:
+      - postgres
+    networks:
+      - app-network
+
+  order-service:
+    build:
+      context: ./order-service
+      dockerfile: Dockerfile.order
+    ports:
+      - "5001:5001"
+    depends_on:
+      - inventory-service
+
+networks:
+  app-network:
+    driver: bridge

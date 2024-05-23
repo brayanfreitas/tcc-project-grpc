@@ -11,4 +11,16 @@ export class InventoryGrpcController {
     const response = await this.inventoryService.checkStock(data.productId);
     return response;
   }
+
+  @GrpcMethod('InventoryService', 'updateStock')
+  async updateStock(data: {
+    productId: number;
+    quantity: number;
+  }): Promise<boolean> {
+    const response = await this.inventoryService.updateStock(
+      data.productId,
+      data.quantity,
+    );
+    return response;
+  }
 }

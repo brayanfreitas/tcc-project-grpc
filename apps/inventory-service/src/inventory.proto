@@ -12,7 +12,8 @@ message StockRequest {
 }
 
 message StockResponse {
-  int32 stockLevel = 1;
+  int32 id = 1;
+  int32 quantity = 2;
 }
 
 message UpdateStockRequest {
@@ -21,5 +22,5 @@ message UpdateStockRequest {
 }
 
 message UpdateStockResponse {
-  int32 quantity = 1;
+  bool updated = 1;
 }

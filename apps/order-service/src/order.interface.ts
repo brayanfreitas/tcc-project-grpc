@@ -17,3 +17,8 @@ export interface IUpdateStockInput {
   productId: number;
   quantity: number;
 }
+
+export interface IUpdateStockOutput {
+  productId: number;
+  quantity: number;
+}
