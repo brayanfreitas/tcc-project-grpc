@@ -10,11 +10,14 @@ async function bootstrap() {
     {
       transport: Transport.GRPC,
       options: {
+        url: 'inventory-service:5000',
         package: 'inventory',
         protoPath: join(__dirname, 'inventory.proto'),
       },
     },
   );
+
+  console.log(app)
 
   await app.listen();
 }

@@ -15,7 +15,6 @@ export class OrderController {
     @Query('productId') productId: number,
     @Query('quantity') quantity: number,
   ): Promise<boolean> {
-    console.log(productId, quantity);
     return this.orderService.updateStock(productId, quantity);
   }
 }

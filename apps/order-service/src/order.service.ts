@@ -48,8 +48,10 @@ export class OrderService implements OnModuleInit {
 
       return true;
     } catch (error) {
+      console.log(error)
       throw new InternalServerErrorException(
         'Error at processing the requisition',
+        error,
       );
     }
   }

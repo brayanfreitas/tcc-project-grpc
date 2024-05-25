@@ -47,8 +47,6 @@ export class InventoryService {
         throw new Error('Not enough stock');
       }
 
-      console.log(productId, quantity);
-
       await this.inventoryRepository.update(
         { product: { id: productId } },
         { quantity: product.quantity - quantity },

@@ -10,4 +10,5 @@ COPY . .
 
 RUN yarn build:inventory && yarn build:order
 
+
 CMD [ "yarn", "start:inventory-service"]

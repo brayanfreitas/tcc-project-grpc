@@ -9,7 +9,7 @@ export const productsDatabase = new DataSource({
   port: 5432,
   username: 'postgres',
   password: 'postgres',
-  database: 'tcc-db',
+  database: 'postgres',
   entities: [Products, Inventory],
   migrations: [join(__dirname, 'migrations', '*{.ts,.js}')],
 });
