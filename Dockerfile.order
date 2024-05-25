@@ -8,6 +8,6 @@ RUN yarn install
 
 COPY . .
 
-RUN yarn build:inventory-service && yarn build:order-service
+RUN yarn build:inventory && yarn build:order
 
 CMD [ "yarn", "start:order-service"]

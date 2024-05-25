@@ -10,7 +10,9 @@ async function bootstrap() {
     OrderModule,
     new FastifyAdapter(),
   );
+  app.enableCors();
+  await app.listen(3002, '0.0.0.0');
   console.log('Order service is running on port 3002')
-  await app.listen(3002);
+  console.log(app.getHttpServer().address())
 }
 bootstrap();

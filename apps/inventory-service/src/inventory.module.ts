@@ -4,17 +4,10 @@ import { InventoryService } from './inventory.service';
 import { Products } from './product.entity';
 import { InventoryGrpcController } from './inventory-grpc.controller';
 import { Inventory } from './inventory.entity';
+import { productsDatabase } from './products-database.provider';
 @Module({
   imports: [
-    TypeOrmModule.forRoot({
-      type: 'postgres',
-      host: 'localhost',
-      port: 5432,
-      username: 'postgres',
-      password: 'postgres',
-      database: 'tcc-db',
-      entities: [Products, Inventory],
-    }),
+    TypeOrmModule.forRoot(productsDatabase.options),
     TypeOrmModule.forFeature([Products, Inventory]),
   ],
   controllers: [InventoryGrpcController],
